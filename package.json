@@ -1,0 +1,39 @@
+{
+  "name": "breakdancer",
+  "version": "1.0.0",
+  "description": "A breakpoint tracking utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register ./test.js",
+    "lint": "godaddy-js-style-lint index.js test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:godaddy/breakdancer.git"
+  },
+  "keywords": [
+    "breakpoints",
+    "breakdancer",
+    "breakpoint",
+    "tracking",
+    "break",
+    "point"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "assume": "1.3.x",
+    "babel": "5.8.x",
+    "eslint-plugin-json": "1.2.x",
+    "eslint-plugin-mocha": "1.1.x",
+    "eslint-plugin-react": "3.16.x",
+    "godaddy-style": "1.0.x",
+    "mocha": "2.4.x",
+    "pre-commit": "1.1.x"
+  },
+  "pre-commit": "lint, test",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
