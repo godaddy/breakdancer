@@ -138,10 +138,10 @@ when the `.changed()` method is called. So it's advised to use `.changed()` and
 the current break point.
 
 ```js
-console.log(breakpoint.breakpoint) // wrist
+console.log(breakpoints.breakpoint) // wrist
 
-breakpoint.changed();
-console.log(breakpoint.breakpoint) // palm
+breakpoints.changed();
+console.log(breakpoints.breakpoint) // palm
 ```
 
 ## License
