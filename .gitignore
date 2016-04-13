@@ -17,7 +17,8 @@ coverage
 .grunt
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+lib
+build
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
@@ -27,3 +28,6 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 *.swp
+
+# IDE files
+.idea

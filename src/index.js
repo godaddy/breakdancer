@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Small fallback for when the `window` glabal is not accessible in a given
  * environment. This allows the module to still be used in a regular `node`
@@ -63,8 +61,8 @@ export default class Breakdancer {
    */
   width () {
     return this.window.innerWidth
-    || this.window.document.documentElement.clientWidth
-    || this.window.document.body.clientWidth;
+      || this.window.document.documentElement.clientWidth
+      || this.window.document.body.clientWidth;
   }
 
   /**
@@ -75,8 +73,8 @@ export default class Breakdancer {
    */
   height () {
     return this.window.innerHeight
-    || this.window.document.documentElement.clientHeight
-    || this.window.document.body.clientHeight;
+      || this.window.document.documentElement.clientHeight
+      || this.window.document.body.clientHeight;
   }
 
   /**
