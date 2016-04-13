@@ -30,8 +30,6 @@ Please do note that:
 - This module was written from a browser environment so it depends on window and
   document to be available in the global scope. We do fallback to a polyfill if
   those are missing so the module should not break in a Node.js environment.
-- The module is written in ES6, so make sure that you environment supports this
-  or use a transpiler like [Babel](http://babeljs.io/) to compile the code.
 
 ## API
 
