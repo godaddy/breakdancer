@@ -1,6 +1,4 @@
-'use strict';
-
-import Breakdancer from './index';
+import Breakdancer from './../../src/index';
 import assume from 'assume';
 
 it('is exposed as a function', function () {
