@@ -1,7 +1,7 @@
-'use strict';
+import get from 'propget';
 
 /**
- * Small fallback for when the `window` glabal is not accessible in a given
+ * Small fallback for when the `window` global is not accessible in a given
  * environment. This allows the module to still be used in a regular `node`
  * environment.
  *
@@ -62,9 +62,10 @@ export default class Breakdancer {
    * @public
    */
   width () {
-    return this.window.innerWidth
-    || this.window.document.documentElement.clientWidth
-    || this.window.document.body.clientWidth;
+    return get(this.window, 'innerWidth')
+    || get(this.window, 'document.documentElement.clientWidth')
+    || get(this.window, 'document.body.clientWidth')
+    || 0;
   }
 
   /**
@@ -74,9 +75,10 @@ export default class Breakdancer {
    * @public
    */
   height () {
-    return this.window.innerHeight
-    || this.window.document.documentElement.clientHeight
-    || this.window.document.body.clientHeight;
+    return get(this.window, 'innerHeight')
+    || get(this.window, 'document.documentElement.clientHeight')
+    || get(this.window, 'document.body.clientHeight')
+    || 0;
   }
 
   /**
