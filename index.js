@@ -1,7 +1,7 @@
 import get from 'propget';
 
 /**
- * Small fallback for when the `window` glabal is not accessible in a given
+ * Small fallback for when the `window` global is not accessible in a given
  * environment. This allows the module to still be used in a regular `node`
  * environment.
  *
