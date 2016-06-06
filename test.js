@@ -1,5 +1,3 @@
-'use strict';
-
 import Breakdancer from './index';
 import assume from 'assume';
 
@@ -29,6 +27,13 @@ describe('breakdancer', function () {
 
   beforeEach(function () {
     breakdancer = new Breakdancer(specification);
+  });
+
+  it('safely works without existing windows object', function () {
+    breakdancer = new Breakdancer(specification, {});
+
+    assume(breakdancer.height()).equals(0);
+    assume(breakdancer.width()).equals(0);
   });
 
   describe('constructor', function () {
