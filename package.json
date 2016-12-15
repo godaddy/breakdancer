@@ -2,10 +2,13 @@
   "name": "breakdancer",
   "version": "1.0.1",
   "description": "A breakpoint tracking utility",
-  "main": "index.js",
+  "main": "./lib",
+  "browser": "./src",
   "scripts": {
     "test": "mocha --compilers js:babel-register ./test.js",
-    "lint": "godaddy-js-style-lint index.js test.js"
+    "lint": "godaddy-js-style-lint ./src ./test.js",
+    "build": "babel ./src -d ./lib",
+    "pretest": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "assume": "1.4.x",
+    "babel-cli": "~6.18.0",
     "babel-register": "6.9.x",
     "godaddy-style": "3.1.x",
     "mocha": "2.5.x",
