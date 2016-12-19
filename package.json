@@ -5,10 +5,11 @@
   "main": "./lib",
   "browser": "./index",
   "scripts": {
-    "test": "npm run lint && mocha --compilers js:babel-register ./test.js",
+    "test": "mocha --compilers js:babel-register ./test.js",
     "lint": "godaddy-js-style-lint *.js",
     "build": "babel index.js -d ./lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "pretest": "npm run lint"
   },
   "repository": {
     "type": "git",
