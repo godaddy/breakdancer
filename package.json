@@ -3,12 +3,12 @@
   "version": "1.0.1",
   "description": "A breakpoint tracking utility",
   "main": "./lib",
-  "browser": "./src",
+  "browser": "./index",
   "scripts": {
-    "test": "mocha --compilers js:babel-register ./test.js",
-    "lint": "godaddy-js-style-lint ./src ./test.js",
-    "build": "babel ./src -d ./lib",
-    "pretest": "npm run build"
+    "test": "npm run lint && mocha --compilers js:babel-register ./test.js",
+    "lint": "godaddy-js-style-lint *.js",
+    "build": "babel index.js -d ./lib",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "assume": "1.4.x",
-    "babel-cli": "~6.18.0",
+    "babel-cli": "6.18.x",
     "babel-register": "6.9.x",
     "godaddy-style": "3.1.x",
     "mocha": "2.5.x",
