@@ -1,4 +1,4 @@
-import Breakdancer from './index';
+import Breakdancer from './';
 import assume from 'assume';
 
 it('is exposed as a function', function () {
