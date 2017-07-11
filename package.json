@@ -47,5 +47,8 @@
     "presets": [
       "babel-preset-es2015"
     ]
+  },
+  "peerDependencies": {
+    "react-native": "^0.46.1"
   }
 }
