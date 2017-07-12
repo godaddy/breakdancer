@@ -2,6 +2,9 @@ import Breakdancer from './';
 import { Dimensions } from 'react-native';
 
 export default class NativeDancer extends Breakdancer {
+  constructor (specification) {
+    super(specification);
+  }
   /**
    * Return the current view port.
    *
