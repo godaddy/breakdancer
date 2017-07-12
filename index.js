@@ -41,9 +41,6 @@ export default class Breakdancer {
    * @private
    */
   normalize (specification) {
-    if (!specification) {
-      return [];
-    }
     if (Array.isArray(specification)) return specification;
 
     return Object.keys(specification).reduce(function reduce(memo, key) {

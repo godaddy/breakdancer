@@ -31,12 +31,6 @@ describe('nativeDancer', function () {
   });
 
   describe('constructor', function () {
-    it('safely works without passed specification', function () {
-      nativeDancer = new NativeDancer();
-      assume(nativeDancer.height()).equals(Dimensions.get('window').height);
-      assume(nativeDancer.width()).equals(Dimensions.get('window').width);
-    });
-
     it('stores the specification as arrays', function () {
       assume(nativeDancer.specification).is.a('array');
       assume(nativeDancer.specification[0].name).equals('mobile');
