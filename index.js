@@ -22,7 +22,7 @@ const win = typeof window !== 'undefined' ? window : {
  * @public
  */
 export default class Breakdancer {
-  constructor (specification, windows) {
+  constructor(specification, windows) {
     this.window = windows || win;
 
     //
@@ -40,7 +40,7 @@ export default class Breakdancer {
    * @returns {Array} List of media query specifications
    * @private
    */
-  normalize (specification) {
+  normalize(specification) {
     if (Array.isArray(specification)) return specification;
 
     return Object.keys(specification).reduce(function reduce(memo, key) {
@@ -61,7 +61,7 @@ export default class Breakdancer {
    * @returns {Number} Current width.
    * @public
    */
-  width () {
+  width() {
     return get(this.window, 'innerWidth')
     || get(this.window, 'document.documentElement.clientWidth')
     || get(this.window, 'document.body.clientWidth')
@@ -74,7 +74,7 @@ export default class Breakdancer {
    * @returns {Number} Current height.
    * @public
    */
-  height () {
+  height() {
     return get(this.window, 'innerHeight')
     || get(this.window, 'document.documentElement.clientHeight')
     || get(this.window, 'document.body.clientHeight')
@@ -88,7 +88,7 @@ export default class Breakdancer {
    * @returns {Boolean} True if the breakpoint for the viewport has changed.
    * @public
    */
-  changed (viewport) {
+  changed(viewport) {
     var breakpoint = this.breakpoint;
     this.breakpoint = this.currently(viewport);
 
@@ -101,7 +101,7 @@ export default class Breakdancer {
    * @returns {Object} viewport
    * @public
    */
-  viewport () {
+  viewport() {
     return {
       height: this.height(),
       width: this.width()
@@ -116,7 +116,7 @@ export default class Breakdancer {
    * @returns {Boolean} True if viewport fits into the specification.
    * @private
    */
-  matches (viewport, specification) {
+  matches(viewport, specification) {
     viewport = viewport || this.viewport();
 
     let matched = false;
@@ -141,7 +141,7 @@ export default class Breakdancer {
    * @returns {String} The current breakpoint that we got triggered.
    * @public
    */
-  currently (viewport) {
+  currently(viewport) {
     viewport = viewport || this.viewport();
 
     for (var i = 0, l = this.specification.length; i < l; i++) {

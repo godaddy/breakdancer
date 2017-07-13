@@ -8,7 +8,7 @@ export default class NativeDancer extends Breakdancer {
    * @returns {Object} viewport
    * @public
    */
-  viewport () {
+  viewport() {
     return Dimensions.get('window');
   }
 
@@ -18,7 +18,7 @@ export default class NativeDancer extends Breakdancer {
    * @returns {Number} Current width.
    * @public
    */
-  width () {
+  width() {
     return Dimensions.get('window').width;
   }
 
@@ -28,7 +28,7 @@ export default class NativeDancer extends Breakdancer {
    * @returns {Number} Current height.
    * @public
    */
-  height () {
+  height() {
     return Dimensions.get('window').height;
   }
 }
