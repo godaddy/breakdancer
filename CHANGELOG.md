@@ -1,6 +1,6 @@
 # CHANGELOG
 
-- Use seperate file for `Breakdancer` base class, allows React Native to resolve `Breakdancer`.
+- Use separate file for `Breakdancer` base class, allows React Native to resolve `Breakdancer`.
 
 ## 1.1.1
 
