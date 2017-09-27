@@ -8,7 +8,7 @@
     "lint": "eslint-godaddy *.js",
     "test:web": "mocha --compilers js:babel-register ./test.js",
     "test:native": "mocha --require react-native-mock/mock.js --compilers js:babel-register ./test.native.js",
-    "build": "babel index.js -d ./lib",
+    "build": "babel index.js breakdancer.js -d ./lib",
     "prepublish": "npm run build",
     "pretest": "npm run lint",
     "test": "npm run test:web && npm run test:native"
