@@ -1,6 +1,6 @@
 {
   "name": "breakdancer",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A breakpoint tracking utility",
   "main": "./lib",
   "browser": "./index",
