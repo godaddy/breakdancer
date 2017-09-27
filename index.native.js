@@ -1,7 +1,20 @@
-import Breakdancer from './';
+import Breakdancer from './breakdancer';
 import { Dimensions } from 'react-native';
 
+/**
+ * Breakdancer is a simple breakpoint utility.
+ *
+ * @constructor
+ * @param {Object} specification Different breakpoints we need to know.
+ * @public
+ */
 export default class NativeDancer extends Breakdancer {
+  constructor(specification) {
+    super(specification);
+
+    this.breakpoint = this.currently();
+  }
+
   /**
    * Return the current view port.
    *
