@@ -13,6 +13,8 @@ wrist, lap, desk, wall never will.
   - [.viewport()](#viewport)
   - [.changed()](#changed)
   - [.currently()](#currently)
+  - [.compareWidth()](#compareWidth)
+  - [.compareHeight()](#compareHeight)
   - [.breakpoint](#breakpoint)
 - [License](#license)
 
@@ -177,7 +179,7 @@ console.log(breakpoints.compareWidth('palm')) // -300
 
 ### compareHeight()
 
-Same usage as `compareWidth`
+Same usage as [`compareWidth`](#compareWidth)
 
 ## License
 
