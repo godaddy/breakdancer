@@ -170,14 +170,46 @@ describe('breakdancer', function () {
   });
 
   describe('#compareWidth', function () {
-    it('should throw an error when looking at an unspecified breakpoint');
-    it('should return the current width when no breakpoint property is specified');
-    it('should return the difference between the current and specified breakpoint');
+    var bd = new Breakdancer(specification, {
+      innerWidth: 1234,
+      document: {
+        documentElement: {
+          clientHeight: 1337,
+          clientWidth: 1338
+        }
+      }
+    });
+
+    it('should throw an error when looking at an unspecified breakpoint', function () {
+      assume(bd.compareWidth('hologram')).throws(TypeError);
+    });
+
+    it('should return the difference in width between the current and specified breakpoint', function () {
+      assume(bd.compareWidth('mobile')).equals(1234 - 400);
+    });
   });
 
   describe('#compareHeight', function () {
-    it('should throw an error when looking at an unspecified breakpoint');
-    it('should return the current width when no breakpoint property is specified');
-    it('should return the difference between the current and specified breakpoint');
+    var bd = new Breakdancer(specification, {
+      innerHeight: 1234,
+      document: {
+        documentElement: {
+          clientHeight: 1337,
+          clientWidth: 1338
+        }
+      }
+    });
+
+    it('should throw an error when looking at an unspecified breakpoint', function () {
+      assume(bd.compareHeight('hologram')).throws(TypeError);
+    });
+
+    it('should return the current height when no breakpoint property is specified', function () {
+      assume(bd.compareHeight('whatever')).equals(1234);
+    });
+
+    it('should return the  difference in height between the current and specified breakpoint', function () {
+      assume(bd.compareHeight('mobile')).equals(1234 - 600);
+    });
   });
 });

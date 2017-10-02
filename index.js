@@ -78,15 +78,17 @@ export default class WebDancer extends Breakdancer {
    * @private
    */
   compare(breakpoint, property) {
-    if (!this.specification[breakpoint]) {
+    const desiredSpec = this.specification.filter(spec => spec.name === breakpoint)[0];
+
+    if (!desiredSpec) {
       return new TypeError(`${breakpoint} is not part of the given specifications`);
     }
 
-    if (!this.specifications[breakpoint][property]) {
+    if (!desiredSpec[property]) {
       return this[property]();
     }
 
-    return this[property]() - this.specifications[breakpoint][property];
+    return this[property]() - desiredSpec[property];
   }
 
   /**
