@@ -169,6 +169,15 @@ describe('breakdancer', function () {
     });
   });
 
-  describe("#compareWidth");
-  describe("#compareHeight");
+  describe('#compareWidth', function () {
+    it('should throw an error when looking at an unspecified breakpoint');
+    it('should return the current width when no breakpoint property is specified');
+    it('should return the difference between the current and specified breakpoint');
+  });
+
+  describe('#compareHeight', function () {
+    it('should throw an error when looking at an unspecified breakpoint');
+    it('should return the current width when no breakpoint property is specified');
+    it('should return the difference between the current and specified breakpoint');
+  });
 });
