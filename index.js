@@ -68,4 +68,51 @@ export default class WebDancer extends Breakdancer {
     || get(this.window, 'document.body.clientHeight')
     || 0;
   }
+
+  /**
+   * Compare current and specified properties of given breakpoint
+   *
+   * @param {String} breakpoint
+   * @return {Number} different between current and specified properties
+   * @private
+   */
+   compare(breakpoint, property) {
+     if(!this.specification[breakpoint]) {
+       return new TypeError(`${breakpoint} is not part of the given specifications`);
+     }
+
+     if(!this.specifications[breakpoint][property]) {
+       return this[property]();
+     }
+
+     return this[property]() - this.specifications[breakpoint][property];
+   }
+
+  /**
+   * Returns the difference between the current width and the given breakpoint.
+   * This can be used to check if the window is "greater" than a breakpoint.
+   * If the given breakpoint does not have a width, this will always
+   * return the current width. If the given breakpoint does not exist, than
+   *
+   * @param {String} breakpoint
+   * @returns {Integer} difference between given breakpoint and current one
+   * @public
+   */
+   compareWidth(breakpoint) {
+     this.compare(breakpoint, 'width');
+   }
+
+   /**
+    * Returns the difference between the current Height and the given breakpoint.
+    * This can be used to check if the window is "greater" than a breakpoint.
+    * If the given breakpoint does not have a Height, this will always
+    * return the current width.
+    *
+    * @param {String} breakpoint
+    * @returns {Integer} difference between given breakpoint and current one
+    * @public
+    */
+    compareWidth(breakpoint) {
+      this.compare(breakpoint, 'height');
+    }
 }

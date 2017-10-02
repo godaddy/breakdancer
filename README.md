@@ -157,7 +157,8 @@ console.log(breakpoints.breakpoint) // palm
 
 Returns the difference between the current width and the given breakpoint. This
 can be used to check if the window is "greater" than a breakpoint. If the given
-breakpoint does not have a width, this will always return the current width.
+breakpoint does not have a width, this will always return the current width. If
+the given breakpoint does not exist, than we return an error.
 
 ```js
 var breakpoints = new Breakdancer([

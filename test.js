@@ -168,4 +168,7 @@ describe('breakdancer', function () {
       assume(viewport.height).equals(breakdancer.height());
     });
   });
+
+  describe("#compareWidth");
+  describe("#compareHeight");
 });
