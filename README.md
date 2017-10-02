@@ -13,8 +13,8 @@ wrist, lap, desk, wall never will.
   - [.viewport()](#viewport)
   - [.changed()](#changed)
   - [.currently()](#currently)
-  - [.compareWidth()](#compareWidth)
-  - [.compareHeight()](#compareHeight)
+  - [.compareWidth()](#comparewidth)
+  - [.compareHeight()](#compareheight)
   - [.breakpoint](#breakpoint)
 - [License](#license)
 
@@ -37,7 +37,7 @@ Please do note that:
 
 ## Support
 
-Breakdance is tested and works on both `web` and `react-native` platforms.
+Breakdancer is tested and works on both `web` and `react-native` platforms.
 Note that we don't specify `react-native` as a peer dependency in order to avoid
 dependency issues on pure `web` projects, so make sure you have `react-native`
 as a dependency.
@@ -173,14 +173,14 @@ var breakpoints = new Breakdancer([
   }
 ]);
 
-// let's assume the window 500 px wide.
+// let's assume the window is 500 px wide.
 console.log(breakpoints.compareWidth('wrist')) // 180
 console.log(breakpoints.compareWidth('palm')) // -300
 ```
 
 ### compareHeight()
 
-Same usage as [`compareWidth`](#compareWidth)
+Same usage as [`compareWidth`](#comparewidth)
 
 ## License
 
