@@ -107,4 +107,32 @@ describe('nativeDancer', function () {
       assume(viewport.height).equals(nativeDancer.height());
     });
   });
+
+  describe('#compareWidth', function () {
+    var nd = new NativeDancer(specification);
+
+    it('should throw an error when looking at an unspecified breakpoint', function () {
+      assume(nd.compareWidth('hologram')).throws(TypeError);
+    });
+
+    it('should return the difference in width between the current and specified breakpoint', function () {
+      assume(nd.compareWidth('mobile')).equals(320 - 400);
+    });
+  });
+
+  describe('#compareHeight', function () {
+    var nd = new NativeDancer(specification);
+
+    it('should throw an error when looking at an unspecified breakpoint', function () {
+      assume(nd.compareHeight('hologram')).throws(TypeError);
+    });
+
+    it('should return the current height when no breakpoint property is specified', function () {
+      assume(nd.compareHeight('whatever')).equals(768);
+    });
+
+    it('should return the  difference in height between the current and specified breakpoint', function () {
+      assume(nd.compareHeight('mobile')).equals(768 - 600);
+    });
+  });
 });
