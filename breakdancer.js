@@ -101,6 +101,7 @@ export default class Breakdancer {
    *
    * @param {String} breakpoint to be compared
    * @param {String} property height or width
+   * @throws {TypeError} If not given breakpoint and property do not exist within the given spec
    * @returns {Number} different between current and specified properties
    * @private
    */
@@ -112,7 +113,7 @@ export default class Breakdancer {
     }
 
     if (!desiredSpec[property]) {
-      return this[property]();
+      return new TypeError(`${breakpoint}.${property} is not part of the given specifications`);
     }
 
     return this[property]() - desiredSpec[property];

@@ -186,7 +186,7 @@ describe('breakdancer', function () {
     });
 
     it('should return the current height when no breakpoint property is specified', function () {
-      assume(bd.compareHeight('whatever', 'height')).equals(1234);
+      assume(bd.compareHeight('whatever', 'height')).throws(TypeError);
     });
 
     it('should return the difference in width between the current and specified breakpoint', function () {
