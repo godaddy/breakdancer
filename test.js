@@ -198,12 +198,17 @@ describe('breakdancer', function () {
 
   describe('#compare{Height,Width}', function () {
     var bd = new Breakdancer(specification);
-    var spy = sinon.spy(bd, 'compare');
+    var spyCompare = sinon.spy(bd, 'compare');
+    var spyHeight = sinon.spy(bd, 'height');
+    var spyWidth = sinon.spy(bd, 'width');
 
     it('should call compare', function () {
       bd.compareHeight('mobile');
       bd.compareWidth('mobile');
-      assume(spy.callCount).equals(2);
+
+      assume(spyHeight.calledOnce).is.truthy();
+      assume(spyWidth.calledOnce).is.truthy();
+      assume(spyCompare.callCount).equals(2);
     });
   });
 });
