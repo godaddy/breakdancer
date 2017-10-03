@@ -38,7 +38,8 @@
     "pre-commit": "1.2.x",
     "react": "^15.6.1",
     "react-native": "^0.46.1",
-    "react-native-mock": "^0.3.1"
+    "react-native-mock": "^0.3.1",
+    "sinon": "^4.0.0"
   },
   "pre-commit": "lint, test",
   "browserify": {

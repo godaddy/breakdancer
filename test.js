@@ -1,5 +1,6 @@
 import Breakdancer from './index';
 import assume from 'assume';
+import sinon from 'sinon';
 
 it('is exposed as a function', function () {
   assume(Breakdancer).is.a('function');
@@ -196,10 +197,40 @@ describe('breakdancer', function () {
   });
 
   describe('#compareHeight', function () {
-    it('should call compare');
+    var bd = new Breakdancer(specification, {
+      innerWidth: 1234,
+      innerHeight: 1000,
+      document: {
+        documentElement: {
+          clientHeight: 1337,
+          clientWidth: 1338
+        }
+      }
+    });
+    var spy = sinon.spy(bd, 'compare');
+
+    it('should call compare', function () {
+      bd.compareHeight('mobile');
+      assume(spy.calledOnce).is.truthy();
+    });
   });
 
   describe('#compareWidth', function () {
-    it('should call compare');
+    var bd = new Breakdancer(specification, {
+      innerWidth: 1234,
+      innerHeight: 1000,
+      document: {
+        documentElement: {
+          clientHeight: 1337,
+          clientWidth: 1338
+        }
+      }
+    });
+    var spy = sinon.spy(bd, 'compare');
+
+    it('should call compare', function () {
+      bd.compareWidth('mobile');
+      assume(spy.calledOnce).is.truthy();
+    });
   });
 });
