@@ -172,7 +172,7 @@ describe('breakdancer', function () {
   describe('#compare', function () {
     var bd = new Breakdancer(specification, {
       innerWidth: 1234,
-      innerHeight: 1234,
+      innerHeight: 1000,
       document: {
         documentElement: {
           clientHeight: 1337,
@@ -182,15 +182,16 @@ describe('breakdancer', function () {
     });
 
     it('should throw an error when looking at an unspecified breakpoint', function () {
-      assume(bd.compareWidth('hologram', 'width')).throws(TypeError);
+      assume(bd.compare('hologram', 'width')).throws(TypeError);
     });
 
     it('should return the current height when no breakpoint property is specified', function () {
-      assume(bd.compareHeight('whatever', 'height')).throws(TypeError);
+      assume(bd.compare('whatever', 'height')).throws(TypeError);
     });
 
     it('should return the difference in width between the current and specified breakpoint', function () {
-      assume(bd.compareWidth('mobile', 'width')).equals(1234 - 400);
+      assume(bd.compare('mobile', 'width')).equals(1234 - 400);
+      assume(bd.compare('mobile', 'height')).equals(1000 - 600);
     });
   });
 
