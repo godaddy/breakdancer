@@ -120,10 +120,9 @@ export default class Breakdancer {
   }
 
   /**
-   * Returns the difference between the current width and the given breakpoint.
-   * This can be used to check if the window is "greater" than a breakpoint.
-   * If the given breakpoint does not have a width, this will always
-   * return the current width. If the given breakpoint does not exist, than
+   * Returns the difference between the current width and the given breakpoint. This
+   * can be used to check if the window is "greater" than a breakpoint. If either the
+   * given breakpoint or the given attribute do not exist, a `TypeError` will be thrown.
    *
    * @param {String} breakpoint to be compared
    * @returns {Integer} difference between given breakpoint and current one
@@ -134,10 +133,9 @@ export default class Breakdancer {
   }
 
   /**
-   * Returns the difference between the current Height and the given breakpoint.
-   * This can be used to check if the window is "greater" than a breakpoint.
-   * If the given breakpoint does not have a Height, this will always
-   * return the current width.
+  * Returns the difference between the current height and the given breakpoint. This
+  * can be used to check if the window is "greater" than a breakpoint. If either the
+  * given breakpoint or the given attribute do not exist, a `TypeError` will be thrown.
    *
    * @param {String} breakpoint to be compared
    * @returns {Integer} difference between given breakpoint and current one
