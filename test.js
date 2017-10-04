@@ -185,7 +185,7 @@ describe('breakdancer', function () {
       assume(bd.compare('hologram', 'width')).throws(TypeError);
     });
 
-    it('should return the current height when no breakpoint property is specified', function () {
+    it('should throw an error when the given dimension does not exist for the given breakpoint', function () {
       assume(bd.compare('whatever', 'height')).throws(TypeError);
     });
 
