@@ -13,6 +13,8 @@ wrist, lap, desk, wall never will.
   - [.viewport()](#viewport)
   - [.changed()](#changed)
   - [.currently()](#currently)
+  - [.compareWidth()](#comparewidth)
+  - [.compareHeight()](#compareheight)
   - [.breakpoint](#breakpoint)
 - [License](#license)
 
@@ -35,7 +37,7 @@ Please do note that:
 
 ## Support
 
-Breakdance is tested and works on both `web` and `react-native` platforms.
+Breakdancer is tested and works on both `web` and `react-native` platforms.
 Note that we don't specify `react-native` as a peer dependency in order to avoid
 dependency issues on pure `web` projects, so make sure you have `react-native`
 as a dependency.
@@ -65,7 +67,7 @@ var breakpoints = new Breakdancer([
   {
     name: 'palm',
     width: 800,
-    heigt: 600
+    height: 600
   }
 ]);
 ```
@@ -149,6 +151,28 @@ console.log(breakpoints.breakpoint) // wrist
 
 breakpoints.changed();
 console.log(breakpoints.breakpoint) // palm
+```
+
+### compare()
+
+Returns the difference between the current window and the given breakpoint in
+the given dimension. This can be used to check if the window is "greater" than a
+breakpoint. If either the given breakpoint or the given attribute do not exist,
+a `TypeError` will be thrown.
+
+```js
+var breakpoints = new Breakdancer([{
+    name: 'wrist',
+    width: 320
+  }, {
+    name: 'palm',
+    width: 800,
+    height: 600
+}]);
+
+// let's assume the window is 500 px wide and 500 px tall.
+console.log(breakpoints.compare('wrist', 'width')) // 180
+console.log(breakpoints.compare('palm', 'height')) // -100
 ```
 
 ## License

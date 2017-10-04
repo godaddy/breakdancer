@@ -168,4 +168,30 @@ describe('breakdancer', function () {
       assume(viewport.height).equals(breakdancer.height());
     });
   });
+
+  describe('#compare', function () {
+    var bd = new Breakdancer(specification, {
+      innerWidth: 1234,
+      innerHeight: 1000,
+      document: {
+        documentElement: {
+          clientHeight: 1337,
+          clientWidth: 1338
+        }
+      }
+    });
+
+    it('should throw an error when looking at an unspecified breakpoint', function () {
+      assume(bd.compare('hologram', 'width')).throws(TypeError);
+    });
+
+    it('should throw an error when the given dimension does not exist for the given breakpoint', function () {
+      assume(bd.compare('whatever', 'height')).throws(TypeError);
+    });
+
+    it('should return the difference in width between the current and specified breakpoint', function () {
+      assume(bd.compare('mobile', 'width')).equals(1234 - 400);
+      assume(bd.compare('mobile', 'height')).equals(1000 - 600);
+    });
+  });
 });
