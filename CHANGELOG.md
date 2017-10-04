@@ -1,6 +1,9 @@
 # CHANGELOG
 
+### 1.2.0
+
 - [#14] Implement `compare` method to compare current window size to any breakpoint
+- Bump the dependencies.
 
 ### 1.1.3
 
