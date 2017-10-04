@@ -1,6 +1,5 @@
 import Breakdancer from './index';
 import assume from 'assume';
-import sinon from 'sinon';
 
 it('is exposed as a function', function () {
   assume(Breakdancer).is.a('function');
@@ -193,22 +192,6 @@ describe('breakdancer', function () {
     it('should return the difference in width between the current and specified breakpoint', function () {
       assume(bd.compare('mobile', 'width')).equals(1234 - 400);
       assume(bd.compare('mobile', 'height')).equals(1000 - 600);
-    });
-  });
-
-  describe('#compare{Height,Width}', function () {
-    var bd = new Breakdancer(specification);
-    var spyCompare = sinon.spy(bd, 'compare');
-    var spyHeight = sinon.spy(bd, 'height');
-    var spyWidth = sinon.spy(bd, 'width');
-
-    it('should call compare', function () {
-      bd.compareHeight('mobile');
-      bd.compareWidth('mobile');
-
-      assume(spyHeight.calledOnce).is.truthy();
-      assume(spyWidth.calledOnce).is.truthy();
-      assume(spyCompare.callCount).equals(2);
     });
   });
 });

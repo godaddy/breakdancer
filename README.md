@@ -153,11 +153,12 @@ breakpoints.changed();
 console.log(breakpoints.breakpoint) // palm
 ```
 
-### compareWidth()
+### compare()
 
-Returns the difference between the current width and the given breakpoint. This
-can be used to check if the window is "greater" than a breakpoint. If either the
-given breakpoint or the given attribute do not exist, a `TypeError` will be thrown.
+Returns the difference between the current window and the given breakpoint in
+the given dimension. This can be used to check if the window is "greater" than a
+breakpoint. If either the given breakpoint or the given attribute do not exist,
+a `TypeError` will be thrown.
 
 ```js
 var breakpoints = new Breakdancer([{
@@ -169,14 +170,10 @@ var breakpoints = new Breakdancer([{
     height: 600
 }]);
 
-// let's assume the window is 500 px wide.
-console.log(breakpoints.compareWidth('wrist')) // 180
-console.log(breakpoints.compareWidth('palm')) // -300
+// let's assume the window is 500 px wide and 500 px tall.
+console.log(breakpoints.compare('wrist', 'width')) // 180
+console.log(breakpoints.compare('palm', 'height')) // -100
 ```
-
-### compareHeight()
-
-Same usage as [`compareWidth`](#comparewidth)
 
 ## License
 
