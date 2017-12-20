@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 2.0.0
+
+- [#7] Moved certain dependencies to devDependencies.
+
 ### 1.2.0
 
 - [#14] Implement `compare` method to compare current window size to any breakpoint
@@ -21,3 +25,4 @@
 [#12]: https://github.com/godaddy/breakdancer/pull/12
 [#13]: https://github.com/godaddy/breakdancer/pull/13
 [#14]: https://github.com/godaddy/breakdancer/pull/14
+[#7]: https://github.com/godaddy/breakdancer/pull/7
