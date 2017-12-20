@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### 2.0.0
+### 3.0.0 (2.0.0 was skipped due to previously being published)
 
 - [#7] Moved certain dependencies to devDependencies.
 
