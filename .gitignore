@@ -36,3 +36,6 @@ node_modules
 lib
 
 yarn.lock
+
+# Editor artifacts
+.idea
