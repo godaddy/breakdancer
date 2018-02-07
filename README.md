@@ -1,4 +1,4 @@
-# breakdancer
+# breakdancer [![Version npm](https://img.shields.io/npm/v/breakdancer.svg?style=flat-square)](https://www.npmjs.com/package/breakdancer)[![Build Status](https://img.shields.io/travis/godaddy/breakdancer/master.svg?style=flat-square)](https://travis-ci.org/godaddy/breakdancer)[![Dependencies](https://img.shields.io/david/godaddy/breakdancer.svg?style=flat-square)](https://david-dm.org/godaddy/breakdancer)[![Coverage Status](https://img.shields.io/coveralls/godaddy/breakdancer/master.svg?style=flat-square)](https://coveralls.io/r/godaddy/breakdancer?branch=master)
 
 Breakdancer is a small utility library that helps developing and using ergonomic
 breakpoints. Devices and sizes will always change, human ergonomics like palm,
