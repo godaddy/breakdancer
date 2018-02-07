@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### 3.0.1
+
+- [#15] Updated peerDependencies ranges to include React 16.
+- Bumped devDependencies and remove unused dependencies.
+- Added test coverage.
+- Enabled Travis-CI.
+
 ### 3.0.0 (2.0.0 was skipped due to previously being published)
 
 - [#7] Moved certain dependencies to devDependencies.
@@ -21,8 +28,9 @@
 
 - [#11], [#12] Removed `react-native` from peerDependencies.
 
+[#7]: https://github.com/godaddy/breakdancer/pull/7
 [#11]: https://github.com/godaddy/breakdancer/pull/11
 [#12]: https://github.com/godaddy/breakdancer/pull/12
 [#13]: https://github.com/godaddy/breakdancer/pull/13
 [#14]: https://github.com/godaddy/breakdancer/pull/14
-[#7]: https://github.com/godaddy/breakdancer/pull/7
+[#15]: https://github.com/godaddy/breakdancer/pull/14
