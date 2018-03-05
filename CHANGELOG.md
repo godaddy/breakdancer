@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 3.0.2
+
+- Removed react-native from peerDependencies.
+
 ### 3.0.1
 
 - [#15] Updated peerDependencies ranges to include React 16.
