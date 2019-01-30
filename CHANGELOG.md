@@ -1,5 +1,7 @@
 # CHANGELOG
 
+Upgrade to `babel@7`.
+
 ### 3.0.2
 
 - Removed react-native from peerDependencies.
