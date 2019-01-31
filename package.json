@@ -3,7 +3,8 @@
   "version": "3.0.2",
   "description": "A breakpoint tracking utility",
   "main": "./lib",
-  "browser": "./index",
+  "browser": "./lib",
+  "module": "./index",
   "scripts": {
     "lint": "eslint-godaddy *.js",
     "test:platforms": "mocha --require react-native-mock/mock.js --require @babel/register ./test.js ./test.native.js",
