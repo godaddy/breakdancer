@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint-godaddy *.js",
     "test:platforms": "mocha --require react-native-mock/mock.js --require @babel/register ./test.js ./test.native.js",
-    "build": "babel index.js index.native.js breakdancer.js -d ./lib",
+    "build": "babel *.js -d ./lib",
     "prepublish": "npm run build",
     "pretest": "npm run lint",
     "test": "nyc --reporter=text --reporter=json-summary npm run test:platforms",
