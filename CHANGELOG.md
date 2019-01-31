@@ -1,6 +1,8 @@
 # CHANGELOG
 
-Upgrade to `babel@7`.
+### 4.0.0
+
+- Upgrade to `babel@7`.
 
 ### 3.0.2
 
