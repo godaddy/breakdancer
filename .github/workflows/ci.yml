@@ -25,8 +25,7 @@ jobs:
         run: |
           npm run test
       - name: Report coverage
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ success() }}
-        run: |
-          npm run coverage
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ success() && matrix.node-version == '14' }}
+        uses: coverallsapp/github-action@master
