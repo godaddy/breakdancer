@@ -11,7 +11,7 @@
     "build": "babel *.js -d ./lib",
     "prepublish": "npm run build",
     "pretest": "npm run lint",
-    "test": "nyc --reporter=text --reporter=json-summary --reporter=text-lcov npm run test:mocha"
+    "test": "nyc --reporter=text --reporter=json-summary --reporter=lcov npm run test:mocha"
   },
   "repository": {
     "type": "git",
