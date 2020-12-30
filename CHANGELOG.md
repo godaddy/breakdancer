@@ -1,5 +1,9 @@
 # CHANGELOG
 
+- **BREAKING:** Drop `react-native` support
+- Update dependencies
+- Swap to GitHub Actions for CI
+
 ### 4.0.0
 
 - Upgrade to `babel@7`.
