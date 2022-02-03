@@ -7,12 +7,11 @@
   "module": "./index",
   "scripts": {
     "lint": "eslint-godaddy *.js",
-    "test:platforms": "mocha --require react-native-mock/mock.js --require @babel/register ./test.js ./test.native.js",
+    "test:mocha": "mocha --require @babel/register ./test.js",
     "build": "babel *.js -d ./lib",
     "prepublish": "npm run build",
     "pretest": "npm run lint",
-    "test": "nyc --reporter=text --reporter=json-summary npm run test:platforms",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "nyc --reporter=text --reporter=json-summary --reporter=lcov npm run test:mocha"
   },
   "repository": {
     "type": "git",
@@ -28,23 +27,21 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "assume": "^1.5.2",
-    "coveralls": "^3.0.0",
-    "eslint": "^5.12.1",
-    "eslint-config-godaddy": "^2.0.0",
-    "eslint-plugin-json": "^1.2.0",
-    "eslint-plugin-mocha": "^4.11.0",
-    "mocha": "^5.0.0",
-    "nyc": "^13.2.0",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "assume": "^2.3.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.16.0",
+    "eslint-config-godaddy": "^4.0.1",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-mocha": "^8.0.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
     "pre-commit": "^1.2.2",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-native": "^0.58.3",
-    "react-native-mock": "^0.3.1"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "pre-commit": "lint, test",
   "dependencies": {

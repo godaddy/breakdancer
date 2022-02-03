@@ -1,0 +1,30 @@
+name: CI
+on:
+  - push
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - '14'
+          - '16'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install deps
+        run: |
+          npm install
+      - name: Run tests
+        run: |
+          npm run test
+      - name: Report coverage
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ success() && matrix.node-version == '14' }}
+        uses: coverallsapp/github-action@master

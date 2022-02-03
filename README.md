@@ -35,13 +35,6 @@ Please do note that:
 - The module is written in ES6, so make sure that you environment supports this
   or use a transpiler like [Babel](http://babeljs.io/) to compile the code.
 
-## Support
-
-Breakdancer is tested and works on both `web` and `react-native` platforms.
-Note that we don't specify `react-native` as a peer dependency in order to avoid
-dependency issues on pure `web` projects, so make sure you have `react-native`
-as a dependency.
-
 ## API
 
 The `Breakdancer` constructor is exported as default interface of this module
