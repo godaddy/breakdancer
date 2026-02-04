@@ -2,8 +2,8 @@
   "name": "breakdancer",
   "version": "4.2.0",
   "description": "A breakpoint tracking utility",
-  "main": "./lib",
-  "module": "./index",
+  "main": "./lib/index.js",
+  "module": "./index.js",
   "scripts": {
     "lint": "eslint-godaddy *.js",
     "test:platforms": "mocha --require react-native-mock/mock.js --require @babel/register ./test.js ./test.native.js",
@@ -56,5 +56,11 @@
   },
   "peerDependencies": {
     "react": ">=15"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./lib/index.js"
+    }
   }
 }
