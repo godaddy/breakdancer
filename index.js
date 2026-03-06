@@ -1,4 +1,4 @@
-import Breakdancer from './breakdancer';
+import Breakdancer from './breakdancer.js';
 import get from 'propget';
 
 /**
