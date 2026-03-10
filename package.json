@@ -42,7 +42,7 @@
     "pre-commit": "^1.2.2",
     "react": ">=15",
     "react-dom": ">=15",
-    "react-native": "^0.58.3",
+    "react-native": "^0.70.2",
     "react-native-mock": "^0.3.1"
   },
   "pre-commit": "lint, test",
