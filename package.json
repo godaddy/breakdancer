@@ -1,6 +1,6 @@
 {
   "name": "breakdancer",
-  "version": "4.2.1",
+  "version": "4.2.3",
   "description": "A breakpoint tracking utility",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
