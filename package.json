@@ -11,9 +11,14 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
@@ -39,6 +44,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^25.9.1",
     "esbuild": "^0.27.7",
     "rollup": "^4.60.4",
     "tsdown": "^0.21.0",
