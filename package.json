@@ -2,16 +2,33 @@
   "name": "breakdancer",
   "version": "4.2.3",
   "description": "A breakpoint tracking utility",
-  "main": "./lib/index.js",
-  "module": "./index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "lint": "eslint-godaddy *.js",
-    "test:platforms": "mocha --require react-native-mock/mock.js --require @babel/register ./test.js ./test.native.js",
-    "build": "babel *.js -d ./lib",
-    "prepublish": "npm run build",
-    "pretest": "npm run lint",
-    "test": "nyc --reporter=text --reporter=json-summary npm run test:platforms",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "build": "tsdown",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,40 +44,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "assume": "^1.5.2",
-    "coveralls": "^3.0.0",
-    "eslint": "^5.12.1",
-    "eslint-config-godaddy": "^2.0.0",
-    "eslint-plugin-json": "^1.2.0",
-    "eslint-plugin-mocha": "^4.11.0",
-    "mocha": "^5.0.0",
-    "nyc": "^13.2.0",
-    "pre-commit": "^1.2.2",
-    "react": ">=15",
-    "react-dom": ">=15",
-    "react-native": "^0.58.3",
-    "react-native-mock": "^0.3.1"
+    "@types/node": "^25.9.1",
+    "esbuild": "^0.27.7",
+    "rollup": "^4.60.4",
+    "tsdown": "^0.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
-  "pre-commit": "lint, test",
   "dependencies": {
     "propget": "^1.1.0"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "peerDependencies": {
-    "react": ">=15"
-  },
-  "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./lib/index.js"
-    }
   }
 }

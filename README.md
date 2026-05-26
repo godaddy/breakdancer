@@ -44,11 +44,11 @@ as a dependency.
 
 ## API
 
-The `Breakdancer` constructor is exported as default interface of this module
+The `Breakdancer` constructor is a named export of this module
 and can be imported using:
 
 ```js
-import Breakdancer from 'breakdancer';
+import { Breakdancer } from 'breakdancer';
 ```
 
 The `Breakdancer` constructor accepts 2 arguments which are your specification
@@ -59,7 +59,7 @@ width/height specification or an array of object where the objects have a `name`
 property.
 
 ```js
-var breakpoints = new Breakdancer([
+const breakpoints = new Breakdancer([
   {
     name: 'wrist',
     width: 320
@@ -158,10 +158,11 @@ console.log(breakpoints.breakpoint) // palm
 Returns the difference between the current window and the given breakpoint in
 the given dimension. This can be used to check if the window is "greater" than a
 breakpoint. If either the given breakpoint or the given attribute do not exist,
-a `TypeError` will be thrown.
+a `TypeError` instance is returned (not thrown), so callers can branch on the
+result without a try/catch.
 
 ```js
-var breakpoints = new Breakdancer([{
+const breakpoints = new Breakdancer([{
     name: 'wrist',
     width: 320
   }, {
