@@ -158,7 +158,8 @@ console.log(breakpoints.breakpoint) // palm
 Returns the difference between the current window and the given breakpoint in
 the given dimension. This can be used to check if the window is "greater" than a
 breakpoint. If either the given breakpoint or the given attribute do not exist,
-a `TypeError` will be thrown.
+a `TypeError` instance is returned (not thrown), so callers can branch on the
+result without a try/catch.
 
 ```js
 const breakpoints = new Breakdancer([{

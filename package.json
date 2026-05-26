@@ -53,10 +53,5 @@
   },
   "dependencies": {
     "propget": "^1.1.0"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    }
   }
 }

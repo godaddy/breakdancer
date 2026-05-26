@@ -1,7 +1,8 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { resolve, dirname } from 'node:path';
 
 /**
  * These tests run against the BUILT artifacts in `dist/` (not `src/`).
@@ -13,6 +14,10 @@ import { resolve } from 'node:path';
  * correctly. If a build step ever transpiled the class down to a plain
  * ES5 function or wrapped it in a factory, these assertions would fail.
  */
+
+// Vitest may execute test files as ESM where `__dirname` is undefined.
+// Derive the directory from `import.meta.url` for portability.
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const distEsm = resolve(__dirname, '../dist/index.mjs');
 const distCjs = resolve(__dirname, '../dist/index.cjs');

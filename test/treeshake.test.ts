@@ -1,8 +1,9 @@
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { build as esbuild } from 'esbuild';
 import { rollup } from 'rollup';
 import { existsSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs';
-import { resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { resolve, join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 
 /**
@@ -25,6 +26,8 @@ import { tmpdir } from 'node:os';
  *     (in which case `sideEffects: false` is the override that tells the
  *     bundler to trust us)
  */
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const distEsm = resolve(__dirname, '../dist/index.mjs');
 const pkgRoot = resolve(__dirname, '..');
@@ -139,10 +142,11 @@ describe('tree-shaking — rollup', () => {
   });
 });
 
-// Best-effort cleanup; safe to leave behind if tests crash.
-afterAll();
-function afterAll() {
-  process.on('exit', () => {
-    try { rmSync(tmpDir, { recursive: true, force: true }); } catch { /* ignore */ }
-  });
-}
+// Cleanup the temp directory after all tests in this file have run.
+afterAll(() => {
+  try {
+    rmSync(tmpDir, { recursive: true, force: true });
+  } catch {
+    /* ignore */
+  }
+});

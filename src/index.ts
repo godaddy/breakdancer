@@ -123,12 +123,14 @@ export class Breakdancer {
    * Returns the difference between the current width and the given breakpoint.
    * This can be used to check if the window is "greater" than a breakpoint.
    * If either the given breakpoint or the given attribute do not exist, a
-   * `TypeError` will be thrown.
+   * `TypeError` is returned (not thrown) so callers can branch on the result
+   * without a try/catch.
    *
    * @param breakpoint - Breakpoint name to be compared
    * @param property - 'height' or 'width'
-   * @throws If the breakpoint or property does not exist within the given spec
-   * @returns Difference between current and specified properties
+   * @returns Difference between current and specified properties, or a
+   *   `TypeError` instance when the breakpoint/property is not part of the
+   *   given specification.
    */
   compare(breakpoint: string, property: 'width' | 'height'): number | TypeError {
     const desiredSpec = this.specification.filter(spec => spec.name === breakpoint)[0];
@@ -137,7 +139,9 @@ export class Breakdancer {
       return new TypeError(`${breakpoint} is not part of the given specifications`);
     }
 
-    if (!desiredSpec[property]) {
+    // Use explicit `typeof` check so a legitimate `0` value isn't treated as
+    // missing (truthiness would reject it).
+    if (typeof desiredSpec[property] !== 'number') {
       return new TypeError(`${breakpoint}.${property} is not part of the given specifications`);
     }
 

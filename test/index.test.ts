@@ -191,5 +191,15 @@ describe('breakdancer', () => {
       expect(bd.compare('mobile', 'width')).toBe(1234 - 400);
       expect(bd.compare('mobile', 'height')).toBe(1000 - 600);
     });
+
+    it('treats 0 as a valid breakpoint dimension (not "missing")', () => {
+      const zeroBd = new Breakdancer(
+        [{ name: 'origin', width: 0, height: 0 }],
+        { innerWidth: 1234, innerHeight: 1000 }
+      );
+
+      expect(zeroBd.compare('origin', 'width')).toBe(1234);
+      expect(zeroBd.compare('origin', 'height')).toBe(1000);
+    });
   });
 });
